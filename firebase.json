@@ -1,0 +1,32 @@
+{
+  "hosting": {
+    "public": "build",
+    "predeploy": [
+      "yarn run lint",
+      "yarn run build"
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/*.map",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "emulators": {
+    "firestore": {
+      "port": 8081
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}
