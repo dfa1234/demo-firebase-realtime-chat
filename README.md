@@ -1,7 +1,8 @@
 ## Chat project for texel
 
-## Based on a React script + firebase
-## and material ui
+Based on React script (and material ui) + firebase 
+
+Demo is available here: https://chat-project-texel.web.app
 
 For running locally:
 

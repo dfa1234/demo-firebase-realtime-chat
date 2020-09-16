@@ -16,7 +16,7 @@ const addMessage = async (newMessage: ChatMessage): Promise<{ newMessage: any }>
 }
 
 //to scroll at the last message
-const scrollToBottom = (ref:any) => {
+const scrollToBottom = (ref: any) => {
     // @ts-ignore
     ref.current.scrollTop = ref.current.scrollHeight;
 }
@@ -25,10 +25,9 @@ const scrollToBottom = (ref:any) => {
 export const Chat: FC<any> = ({login = 'newUser'}) => {
 
     const history = useHistory();
-    //TODO go back if there is no login
-    // if(!login){
-    //     history.push('/')
-    // }
+    if (!login) {
+        history.push('/')
+    }
 
     let {roomId} = useParams();
 
@@ -58,7 +57,7 @@ export const Chat: FC<any> = ({login = 'newUser'}) => {
     let textInput = useRef();
     let chatWindow = useRef();
 
-    const sendMyMessage = ()=>{
+    const sendMyMessage = () => {
         addMessage({
             message: currentMessage || '',
             date: new Date(),
@@ -74,7 +73,7 @@ export const Chat: FC<any> = ({login = 'newUser'}) => {
 
     return <MainWrapper>
         <Title>Welcome {login} to room: {roomId}</Title>
-        <ChatWindow ref={chatWindow as any as RefObject<HTMLDivElement>} >
+        <ChatWindow ref={chatWindow as any as RefObject<HTMLDivElement>}>
             {chatMessages.map((chatMessage: ChatMessage) => {
                 return <Bubble
                     alignSelf={chatMessage.login === login ? 'flex-end' : 'flex-start'}
@@ -124,7 +123,8 @@ const ChatWindow = styled(Box)({
     overflowY: 'scroll',
     width: 500,
     maxWidth: '90%',
-    backgroundColor: "whitesmoke",
+    backgroundColor: 'whitesmoke',
+    border: '1px solid lightgray',
     paddingBottom: 60
 })
 
@@ -134,7 +134,7 @@ const Bubble = styled(Box)({
     borderRadius: 5,
     padding: 10,
     margin: 10,
-    border:'1px solid lightgray'
+    border: '1px solid lightgray'
 })
 
 

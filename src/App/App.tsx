@@ -8,6 +8,7 @@ import {MaterialThemeProvider} from '../utils/MaterialThemeProvider';
 import {Route, Router, Switch} from 'react-router-dom';
 import {RoomSelection} from "./RoomSelection";
 import {Chat} from "./Chat";
+import logo from './logo.png';
 
 const history = createBrowserHistory();
 
@@ -30,7 +31,7 @@ const RoutedApp: FC = () => {
 
     return <MainWrapper backgroundColor={theme.palette.background.default} color={theme.palette.text.primary}>
         <LogoWrapper>
-            <Logo src="logo.png" alt="Chat Project Logo" />
+            <Logo src={logo} alt="Chat Project Logo" />
             <Title>Chat project Texel</Title>
         </LogoWrapper>
         <Router history={history}>
