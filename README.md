@@ -2,8 +2,6 @@
 
 Based on React script (and material ui) + firebase 
 
-Demo is available here: https://chat-project-texel.web.app
-
 For running locally:
 
 ```
